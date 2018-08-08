@@ -1,0 +1,52 @@
+[
+{
+  "model": "VTAT_TOOL.repository",
+  "pk": 25,
+  "fields": {
+    "user": 1,
+    "repository_name": "DM",
+    "repository_description": "VITA",
+    "repository_file": "uploads/excel_sheets/admin/DM/dm.xml"
+  }
+},
+{
+  "model": "VTAT_TOOL.repository",
+  "pk": 44,
+  "fields": {
+    "user": 3,
+    "repository_name": "VITA DM",
+    "repository_description": "",
+    "repository_file": "uploads/excel_sheets/jyothi/VITA DM/dm.xml"
+  }
+},
+{
+  "model": "VTAT_TOOL.repository",
+  "pk": 53,
+  "fields": {
+    "user": 1,
+    "repository_name": "SM",
+    "repository_description": "",
+    "repository_file": "uploads/excel_sheets/admin/SM/xml_sm_sanity_WIiJoMd.xml"
+  }
+},
+{
+  "model": "VTAT_TOOL.repository",
+  "pk": 65,
+  "fields": {
+    "user": 1,
+    "repository_name": "LTP_NEW",
+    "repository_description": "",
+    "repository_file": "uploads/excel_sheets/admin/LTP_NEW/ltp_ex.xml"
+  }
+},
+{
+  "model": "VTAT_TOOL.repository",
+  "pk": 67,
+  "fields": {
+    "user": 1,
+    "repository_name": "LTP",
+    "repository_description": "",
+    "repository_file": "uploads/excel_sheets/admin/LTP/ltp_ex_X0AlelD.xml"
+  }
+}
+]

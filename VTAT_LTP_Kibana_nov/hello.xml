@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<django-objects version="1.0">
+  <object model="VTAT_TOOL.repository" pk="25">
+    <field name="user" rel="ManyToOneRel" to="auth.user">1</field>
+    <field name="repository_name" type="CharField">DM</field>
+    <field name="repository_description" type="CharField">VITA</field>
+    <field name="repository_file" type="FileField">uploads/excel_sheets/admin/DM/dm.xml</field>
+  </object>
+  <object model="VTAT_TOOL.repository" pk="44">
+    <field name="user" rel="ManyToOneRel" to="auth.user">3</field>
+    <field name="repository_name" type="CharField">VITA DM</field>
+    <field name="repository_description" type="CharField"></field>
+    <field name="repository_file" type="FileField">uploads/excel_sheets/jyothi/VITA DM/dm.xml</field>
+  </object>
+  <object model="VTAT_TOOL.repository" pk="53">
+    <field name="user" rel="ManyToOneRel" to="auth.user">1</field>
+    <field name="repository_name" type="CharField">SM</field>
+    <field name="repository_description" type="CharField"></field>
+    <field name="repository_file" type="FileField">uploads/excel_sheets/admin/SM/xml_sm_sanity_WIiJoMd.xml</field>
+  </object>
+  <object model="VTAT_TOOL.repository" pk="65">
+    <field name="user" rel="ManyToOneRel" to="auth.user">1</field>
+    <field name="repository_name" type="CharField">LTP_NEW</field>
+    <field name="repository_description" type="CharField"></field>
+    <field name="repository_file" type="FileField">uploads/excel_sheets/admin/LTP_NEW/ltp_ex.xml</field>
+  </object>
+  <object model="VTAT_TOOL.repository" pk="67">
+    <field name="user" rel="ManyToOneRel" to="auth.user">1</field>
+    <field name="repository_name" type="CharField">LTP</field>
+    <field name="repository_description" type="CharField"></field>
+    <field name="repository_file" type="FileField">uploads/excel_sheets/admin/LTP/ltp_ex_X0AlelD.xml</field>
+  </object>
+</django-objects>

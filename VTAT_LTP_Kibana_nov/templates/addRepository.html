@@ -1,0 +1,102 @@
+<style>
+    .mynavbar{
+    
+    display: block;
+    position: relative; /* <-- Oh dear */
+}
+.myfooter {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+    </style><div class="main">
+	
+	<div class="main-inner">
+
+	    <div class="container">
+	
+	      <div class="row">
+	      <div class="span12">      		
+	      		
+	      		<div class="widget ">
+	      			
+	      			<div class="widget-header">
+	      				<i class="icon-briefcase"></i>
+	      				<h3>Create {{repo_name_sheet}}</h3>
+	  				</div> <!-- /widget-header -->
+					
+					<div class="widget-content">
+	      	
+	      	<form id="new_repository" class="form-horizontal">
+									<fieldset>
+										
+										<div class="control-group">	
+																					
+											<label class="control-label" for="repo_name">{{repo_name_sheet}} Name</label>
+											<div class="controls">
+											<div style="color:red" id="repository_name_error"></div>
+												<input type="text" class="span6 disabled" name="repository_name" id="repository_name" placeholder="{{repo_name_sheet}} Name">
+												<p class="help-block">{{repo_name_sheet}} Nameshould be unique and once created, cannot be changed</p>
+											</div> <!-- /controls -->				
+										</div> <!-- /control-group -->
+										
+										
+										<div class="control-group">											
+											<label class="control-label" for="description">Description</label>
+											<div class="controls">
+												<input type="text" class="span6" name="repository_description" id="repo_description" placeholder="Description (optional)">
+											</div> <!-- /controls -->				
+										</div> <!-- /control-group -->
+										
+										
+										<div class="control-group">											
+											<label class="control-label" for="lastname">Upload Source File</label>
+											<div class="controls">
+											<div style="color:red" id="myfile_error"></div>
+												<input type="file" multiple accept=".xml"  class="span6"  name="mysourcefile" id="mysource">
+											</div> <!-- /controls -->				
+										</div> <!-- /control-group -->
+
+										<!--<div class="control-group">											
+											<label class="control-label" for="lastname">Upload ReadMe File </label>
+											<div class="controls">
+												<div style="color:red" id="myreadme_error"></div>
+												<input type="file" class="span6"  name="myreadmefile" id="myreadme">
+											</div> 
+										</div> --><!-- /control-group -->
+
+										<div class="control-group">											
+											
+											<div class="controls">
+												
+											</div> <!-- /controls -->				
+										</div> <!-- /control-group -->
+
+										<div class="control-group">											
+											
+											<div class="controls">
+												<button class="button btn btn-info" type="submit">Submit</button>
+												<!--<button class="btn">Cancel</button>-->
+											</div> <!-- /controls -->				
+										</div> <!-- /control-group -->
+
+										
+										
+                                        
+                                        </fieldset>
+                                        </form>
+                                        </div>
+                                        </div>
+                                        </div>
+
+	      	
+	      	
+	      	
+	      	
+	      </div> <!-- /row -->
+	
+	    </div> <!-- /container -->
+	    
+	</div> <!-- /main-inner -->
+    
+</div> <!-- /main -->

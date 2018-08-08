@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<root name="Connectivity">
+		<root name="Router">
+			<children name="Router_UDP_UL" action="python R_UDP_UL.py"></children>
+			<children name="Router_UDP_DL" action="python R_UDP_DL.py"></children>
+			<children name="Router_UDP_BIDI" action="python R_UDP_BIDI.py"></children>
+			<children name="Router_UDP_Qos_UL" action="python R_UDP_Qos_UL.py"></children>
+			<children name="Router_UDP_Qos_DL" action="python R_UDP_Qos_DL.py"></children>
+			<children name="Router_UDP_Qos_BIDI" action="python R_UDP_Qos_BIDI.py"></children>
+			<children name="Router_TCP_UL" action="python R_TCP_UL.py"></children>
+			<children name="Router_TCP_DL" action="python R_TCP_DL.py"></children>
+			<children name="Router_TCP_BIDI" action="python R_TCP_BIDI.py"></children>
+			<children name="Router_TCP_Qos_UL" action="python R_TCP_Qos_UL.py"></children>
+			<children name="Router_TCP_Qos_DL" action="python R_TCP_Qos_DL.py"></children>
+			<children name="Router_TCP_Qos_BIDI" action="python R_TCP_Qos_BIDI.py"></children>
+		</root>
+		<root name="SAP">
+			<children name="SAP_UDP_UL" action="python S_UDP_UL.py"></children>
+			<children name="SAP_UDP_DL" action="python S_UDP_DL.py"></children>
+			<children name="SAP_UDP_BIDI" action="python S_UDP_BIDI.py"></children>
+			<children name="SAP_UDP_Qos_UL" action="python S_UDP_Qos_UL.py"></children>
+			<children name="SAP_UDP_Qos_DL" action="python S_UDP_Qos_DL.py"></children>
+			<children name="SAP_UDP_Qos_BIDI" action="python S_UDP_Qos_BIDI.py"></children>
+			<children name="SAP_TCP_UL" action="python S_TCP_UL.py"></children>
+			<children name="SAP_TCP_DL" action="python S_TCP_DL.py"></children>
+			<children name="SAP_TCP_BIDI" action="python S_TCP_BIDI.py"></children>
+			<children name="SAP_TCP_Qos_UL" action="python S_TCP_Qos_UL.py"></children>
+			<children name="SAP_TCP_Qos_DL" action="python S_TCP_Qos_DL.py"></children>
+			<children name="SAP_TCP_Qos_BIDI" action="python S_TCP_Qos_BIDI.py"></children>
+		</root>
+		<root name="P2P">
+			<children name="P2P_UDP_UL" action="python P2P_UDP_UL.py"></children>
+			<children name="P2P_UDP_DL" action="python P2P_UDP_DL.py"></children>
+			<children name="P2P_UDP_BIDI" action="python P2P_UDP_BIDI.py"></children>
+			<children name="P2P_UDP_Qos_UL" action="python P2P_UDP_Qos_UL.py"></children>
+			<children name="P2P_UDP_Qos_DL" action="python P2P_UDP_Qos_DL.py"></children>
+			<children name="P2P_UDP_Qos_BIDI" action="python P2P_UDP_Qos_BIDI.py"></children>
+			<children name="P2P_TCP_UL" action="python P2P_TCP_UL.py"></children>
+			<children name="P2P_TCP_DL" action="python P2P_TCP_DL.py"></children>
+			<children name="P2P_TCP_BIDI" action="python P2P_TCP_BIDI.py"></children>
+		</root>
+		<root name="Interruptions">
+			<children name="Apn_on_off" action="python Apn_on_off.py"></children>
+			<children name="BT_on_off" action="python BT_on_off.py"></children>
+			<children name="Lcd_on_off" action="python Lcd_on_off.py"></children>
+			<children name="N_SAP_on_off" action="python N_SAP_on_off.py"></children>
+			<children name="Wifi_on_off" action="python Wifi_on_off.py"></children>
+			<children name="wifi_scanning" action="python wifi_scanning.py"></children>
+		</root>
+	</root>		
+	<root name="BLUETOOTH">
+		<children name="BT_Adapter_ON_OFF" action="python BT_Adapter_ON_OFF.py"></children>
+		<children name="BT_on_off" action="python BT_on_off.py"></children>
+		<children name="BT_scan_on" action="python BT_scan_on.py"></children>
+		<children name="BT_pair_unpair" action="python BT_pair_unpair.py"></children>
+		<children name="BT_connect" action="python connect.py"></children>
+		<children name="BT_disconnect" action="python disconnect.py"></children>
+		<children name="BT_FTP_S" action="python BT_send.py"></children>
+		<children name="BT_FTP_R" action="python BT_receive.py"></children>
+		<children name="BT_scan_off" action="python BT_scan_off.py"></children>
+		<children name="BT_pair" action="python pair.py"></children>
+		
+	</root>
+	
+</root>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root name = "SM">
+	<children name="1_store">
+			<children name = "Store:Valid Path" action = "python SM_Automate.py correct_path" logfile = "test_idf_with_correct_path.log">
+               </children>
+			<children name = "Store:Invalid Path" action = "python SM_Automate.py incorrect_path" logfile = "test_idf_with_incorrect_path.log">
+               </children>
+				
+	</children>	
+	<children name="2_File search">
+		    <children name = "File_Search:Valid Path" action = "python SM_Automate.py file_exist" logfile="test_idf_file_search_exist.log"></children>
+            <children name = "File_Search:InValid Path" action = "python SM_Automate.py file_not_exist" logfile="test_idf_file_search_not_exist.log"></children>
+	</children>
+    <children name="3_Content Search">
+		    <children name = "Content_Search:Valid Path" action = "python SM_Automate.py content_exist" logfile="test_idf_content_search_exist.log"></children>
+            <children name = "Content_Search:Invalid Path" action = "python SM_Automate.py content_not_exist" logfile="test_idf_content_search_not_exist.log"></children>
+	</children>
+	<children name="4_Manage">
+		    <children name = "Manage:Valid Path" action = "python SM_Automate.py date_exist" logfile="test_idf_manage_by_valid_date.log"></children>
+            <children name = "Manage:Invalid Path" action = "python SM_Automate.py date_not_exist" logfile="test_idf_manage_by_invalid_date.log"></children>
+
+
+	
+  
+ </children>
+</root>
+

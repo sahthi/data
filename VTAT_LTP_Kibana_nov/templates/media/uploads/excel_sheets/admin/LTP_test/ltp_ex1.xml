@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root name="LTP">
+	<children name="runtest" iterations="1">
+		<children name="filesystem" action="./runltp -p -l /tmp/result.log -f fs " logfile="/tmp/result.log"></children>
+		<children name="syscalls" action="./runltp -p -l /tmp/result.log -f syscalls " logfile="/tmp/result.log"></children>
+		<children name="ipc" action="./runltp -p -l /tmp/ipc.log -f ipc" logfile="/tmp/ipc.log"></children>
+	</children>
+	<children name="testscripts" iterations="1">
+		<children name="adp.sh" action="./adp.sh -d 10 -n 2" logfile="adp.log"></children>
+	</children>
+</root>
+
+ 

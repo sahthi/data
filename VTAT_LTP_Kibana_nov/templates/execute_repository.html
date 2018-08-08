@@ -1,0 +1,265 @@
+{%load staticfiles %}
+
+{%load VTAT_TOOL_extras%}
+
+<style>
+* { margin: 0; padding: 0; }
+
+#page-wrap {
+  margin: auto 0;
+}
+
+.treeview {
+  margin: 10px 0 0 20px;
+}
+
+ul { 
+  list-style: none;
+}
+
+.treeview li {
+  /*background: url(http://jquery.bassistance.de/treeview/images/treeview-default-line.gif) 0 0 no-repeat;*/
+  background: url(https://cdn.dribbble.com/users/11183/screenshots/2582709/checkbox.gif) 0 0 no-repeat;
+  /*background: url(http://127.0.0.1:8002/media/assets/images/checkbox.gif) 0 0 no-repeat;*/
+  /*background: url()0 0 no-repeat;*/
+  padding: 2px 0 2px 16px;
+}
+
+.treeview > li:first-child > label {
+  /* style for the root element - IE8 supports :first-child
+  but not :last-child ..... 
+  
+}
+
+.treeview li.last {
+  background-position: 0 -1766px;
+}
+
+.treeview li > input {
+  height: 16px;
+  width: 16px;
+  /* hide the inputs but keep them in the layout with events (use opacity) */
+  opacity: 0;
+  filter: alpha(opacity=0); /* internet explorer */ 
+  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(opacity=0)"; /*IE8*/
+}
+
+.treeview li > label {
+  background: url(https://www.thecssninja.com/demo/css_custom-forms/gr_custom-inputs.png) 0 -1px no-repeat;
+  /* move left to cover the original checkbox area */
+  margin-left: -20px;
+  /* pad the text to make room for image */
+  padding-left: 20px;
+}
+
+/* Unchecked styles */
+
+.treeview .custom-unchecked {
+  background-position: 0 -1px;
+}
+.treeview .custom-unchecked:hover {
+  background-position: 0 -21px;
+}
+
+/* Checked styles */
+
+.treeview .custom-checked { 
+  background-position: 0 -81px;
+}
+.treeview .custom-checked:hover { 
+  background-position: 0 -101px; 
+}
+
+/* Indeterminate styles */
+
+.treeview .custom-indeterminate { 
+  background-position: 0 -141px; 
+}
+.treeview .custom-indeterminate:hover { 
+  background-position: 0 -121px; 
+}
+</style>
+
+
+<link href="/media/assets/css/bootstrap.min.css" rel="stylesheet">
+<link href="/media/assets/css/bootstrap-responsive.min.css" rel="stylesheet">
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600"
+        rel="stylesheet">
+<link href="/media/assets/css/font-awesome.css" rel="stylesheet">
+<link href="/media/assets/css/style.css" rel="stylesheet">
+<!--<link href="/media/assets/css/pages/dashboard.css" rel="stylesheet">-->
+
+<script>
+$(function() {
+
+  $('input[type="checkbox"]').change(checkboxChanged);
+
+  function checkboxChanged() {
+    var $this = $(this),
+        checked = $this.prop("checked"),
+        container = $this.parent(),
+        siblings = container.siblings();
+
+    container.find('input[type="checkbox"]')
+    .prop({
+        indeterminate: false,
+        checked: checked
+    })
+    .siblings('label')
+    .removeClass('custom-checked custom-unchecked custom-indeterminate')
+    .addClass(checked ? 'custom-checked' : 'custom-unchecked');
+
+    checkSiblings(container, checked);
+  }
+
+  function checkSiblings($el, checked) {
+    var parent = $el.parent().parent(),
+        all = true,
+        indeterminate = false;
+
+    $el.siblings().each(function() {
+      return all = ($(this).children('input[type="checkbox"]').prop("checked") === checked);
+    });
+
+    if (all && checked) {
+      parent.children('input[type="checkbox"]')
+      .prop({
+          indeterminate: false,
+          checked: checked
+      })
+      .siblings('label')
+      .removeClass('custom-checked custom-unchecked custom-indeterminate')
+      .addClass(checked ? 'custom-checked' : 'custom-unchecked');
+
+      checkSiblings(parent, checked);
+    } 
+    else if (all && !checked) {
+      indeterminate = parent.find('input[type="checkbox"]:checked').length > 0;
+
+      parent.children('input[type="checkbox"]')
+      .prop("checked", checked)
+      .prop("indeterminate", indeterminate)
+      .siblings('label')
+      .removeClass('custom-checked custom-unchecked custom-indeterminate')
+      .addClass(indeterminate ? 'custom-indeterminate' : (checked ? 'custom-checked' : 'custom-unchecked'));
+
+      checkSiblings(parent, checked);
+    } 
+    else {
+      $el.parents("li").children('input[type="checkbox"]')
+      .prop({
+          indeterminate: true,
+          checked: false
+      })
+      .siblings('label')
+      .removeClass('custom-checked custom-unchecked custom-indeterminate')
+      .addClass('custom-indeterminate');
+    }
+  }
+});
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+  <script src="main.js"></script>
+
+<div class="main">
+	
+	<div class="main-inner">
+
+	    <div class="container">
+	
+	      <div class="row">
+	      	
+	      	<div class="span12">      		
+	      		
+	      		<div class="widget ">
+	      			
+	      			<div class="widget-header">
+	      				<i class="icon-external-link"></i>
+	      				<h3>Exexute {{repo_name_sheet}}</h3>
+	  				</div> <!-- /widget-header -->
+					
+					<div class="widget-content">
+
+          <div id ="Tree_data" style="height:370px;overflow:auto"> 
+          
+            {% load mptt_tags %}
+            <tr>
+            <ul class="treeview">
+                {% recursetree nodes %}
+               <li>
+                <input type="checkbox" class ="script_checkbox" name = "{{node.testcase_name}}" value = "{{node.id}}" id="{{node.testcase_name}}">
+
+		{{ node.testcase_name }}</label>
+                  {% if not node.is_leaf_node %}
+                  <ul class="children">
+                    {{ children }}
+                  </ul>
+                {% endif %}
+            </li>
+          {% endrecursetree %}
+      </ul></tr>
+      </div>
+											
+						
+						<div class = "form-group">
+<div class="span6">
+              <br>
+
+              <button class="btn btn-info" id = "script_execute">Execute</button>
+              </div>  
+              <label class="control-label" for="repo_name">Iterations</label>
+              <div class="controls">
+              <select id = "run_iterations">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+              </select>
+              </div>
+             
+              </div>
+						
+						
+						
+					</div> <!-- /widget-content -->
+						
+				</div> <!-- /widget -->
+	      		
+		    </div> <!-- /span8 -->
+	      	
+	      	
+	      	
+	      	
+	      </div> <!-- /row -->
+	
+	    </div> <!-- /container -->
+	    
+	</div> <!-- /main-inner -->
+    
+</div> <!-- /main -->
+    
+    
+    
+ 
+
+
+
+    
+    
+
+    
+
+
+<script src="/media/assets/js/jquery-1.7.2.min.js"></script>
+	
+<script src="/media/assets/js/bootstrap.js"></script>
+<script src="/media/assets/js/base.js"></script>
+
+
+  

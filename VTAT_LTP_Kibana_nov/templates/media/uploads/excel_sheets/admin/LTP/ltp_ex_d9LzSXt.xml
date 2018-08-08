@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root name="LTP">
+	<children name="runtest" iterations="1">
+		<children name="filesystem" >
+			<children name="inode01" action="./runltp -p -l /tmp/result_inode.log -f fs -s inode01" logfile="/tmp/result_inode.log"></children>
+			<children name="inode02" action="./runltp -p -l /tmp/result_node.log -f fs -s inode02" logfile="/tmp/result_node.log"></children>
+			<children name="stream01" action="./runltp -p -l /tmp/result_stream.log -f fs -s stream01" logfile="/tmp/result_stream.log"></children>
+			<children name="ftest01" action="./runltp -p -l /tmp/result_ftest.log -f fs -s ftest01" logfile="/tmp/result_ftest.log"></children>
+			<children name="lftest01" action="./runltp -p -l /tmp/result_lftest.log -f fs -s lftest01" logfile="/tmp/result_lftest.log"></children>
+			<children name="writetest01" action="./runltp -p -l /tmp/result_writetest.log -f fs -s writetest01" logfile="/tmp/result_writetest.log"></children>
+		</children>
+		<children name="syscalls">
+			<children name="wait401" action="./runltp -p -l /tmp/result_wait.log -f syscalls -s wait401" logfile="/tmp/result_wait.log"></children>
+			<children name="mkdir01" action="./runltp -p -l /tmp/result_mkdir.log -f syscalls -s mkdir01" logfile="/tmp/result_mkdir.log"></children>
+			<children name="semctl07" action="./runltp -p -l /tmp/syscalls_semctl.log -f syscalls -s semctl01 " logfile="/tmp/syscalls_semctl.log"></children>	
+			<children name="msgsnd01" action="./runltp -p -l /tmp/syscalls_msgsnd.log -f syscalls -s msgsnd01 " logfile="/tmp/syscalls_msgsnd.log"></children>
+			<children name="msgctl01" action="./runltp -p -l /tmp/syscalls_msgctl.log -f syscalls -s msgctl01 " logfile="/tmp/syscalls_msgctl.log"></children>
+			<children name="msgget01" action="./runltp -p -l /tmp/syscalls_msgget.log -f syscalls -s msgget01 " logfile="/tmp/syscalls_msgget.log"></children>
+			<children name="msgrcv01" action="./runltp -p -l /tmp/syscalls_msgrcv.log -f syscalls -s msgrcv01 " logfile="/tmp/syscalls_msgrcv.log"></children>
+			<children name="semget01" action="./runltp -p -l /tmp/syscalls_semget.log -f syscalls -s semget01 " logfile="/tmp/syscalls_semget.log"></children>
+			<children name="semop01" action="./runltp -p -l /tmp/syscalls_semop.log -f syscalls -s semop01 " logfile="/tmp/syscalls_semop.log"></children>
+			<children name="shmat01" action="./runltp -p -l /tmp/syscalls_shmat.log -f syscalls -s shmat01 " logfile="/tmp/syscalls_shmat.log"></children>
+			<children name="shmctl01" action="./runltp -p -l /tmp/syscalls_shmctl.log -f syscalls -s shmctl01 " logfile="/tmp/syscalls_shmctl.log"></children>
+			<children name="shmdt01" action="./runltp -p -l /tmp/syscalls_shmdt.log -f syscalls -s shmdt01 " logfile="/tmp/syscalls_shmdt.log"></children>
+			<children name="shmget01" action="./runltp -p -l /tmp/syscalls_shmget.log -f syscalls -s shmget01 " logfile="/tmp/syscalls_shmget.log"></children>
+		</children>
+		<children name="ipc" action="./runltp -p -l /tmp/ipc.log -f ipc" logfile="/tmp/ipc.log">
+			<children name="ipc_pipeio" action="./runltp -p -l /tmp/ipc_pipei.log -f ipc -s pipeio_1" logfile="/tmp/ipc_pipei.log"></children>
+			<children name="ipc_sem" action="./runltp -p -l /tmp/ipc_sem.log -f ipc -s sem01" logfile="/tmp/ipc_sem.log"></children>
+
+		</children>
+	</children>
+	<children name="testscripts" iterations="1">
+		<children name="adp.sh" action="./adp.sh -d 10 -n 2" logfile="adp.log"></children>
+	</children>
+</root>
+
+ 

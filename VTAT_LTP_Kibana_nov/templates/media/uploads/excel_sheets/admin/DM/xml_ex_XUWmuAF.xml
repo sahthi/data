@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root name="DM">
+	<children name="INIT" iterations="1" action="python run.py init 1 > test.log" logfile="test.log">
+		<children name="IP" iterations="1">
+			<children name="IP discover" action="python run.py discover 1 > test.log " logfile="test.log">
+					<children name="IP negative_discover" action="python run.py discover 1> negtest.log"  logfile="negtest.log"/>
+					<children name="IP initafterdiscover" action="python run.py discover 1 init 1 > test.log" logfile="test.log"/>
+				</children>
+				<children name="IP observe" action="python run.py observe 1 > test.log" logfile="test.log">
+					<children name="IP multiobserve" action="python run.py observe 5 > multitest.log" logfile="multitest.log"/>
+					<children name="IP negative_observe" action="python run.py observe > negtest.log" logfile="negtest.log"/>
+					<children name="IP initafterobserve" action="python run.py observe 1 init 1 > test.log" logfile="test.log"/>
+				</children>
+				<children name="IP get" action="python run.py get 1 > test.log" logfile="test.log">
+					<children name="IP multiget" action="python run.py get 5 > multitest.log" logfile="multitest.log"/>
+					<children name="IP negative_get" action="python run.py get > negtest.log" logfile="negtest.log"/>
+					<children name="IP initafterget" action="python run.py get 1 init 1 > test.log" logfile="test.log"/>
+				</children>
+				<children name="IP put" action="python run.py put 1 > test.log" logfile="test.log">
+					<children name="IP multiput" action="python run.py put 5 > multitest.log" logfile="multitest.log"/>
+					<children name="IP negative_put" action="python run.py put > negtest.log" logfile="negtest.log"/>
+					<children name="IP initafterput" action="python run.py put 1 init 1 > test.log" logfile="test.log"/>
+				</children>
+			</children>
+		<children name="Bluetooth" iterations="1">
+			<children name=" BluetBLE ooth discover" action="python run.py discover 1" logfile="test.log">
+					<children name="BT negative_discover" action="python run.py discover > negtest.log"  logfile="negtest.log"/>
+					<children name="BT initafterdiscover" action="python run.py discover 1 init 1 > test.log" logfile="test.log"/>
+				</children>
+				<children name="Bluetooth observe" action="python run.py observe 1" logfile="test.log">
+					<children name="BT negative_observe" action="python run.py observe > negtest.log" logfile="negtest.log"/>
+					<children name="BT initafterobserve" action="python run.py observe 1 init 1 > test.log" logfile="test.log"/>
+				</children>
+				<children name="Bluetooth get" action="python run.py get 1" logfile="test.log">
+					<children name="BT multiget" action="python run.py get 5 > multitest.log" logfile="multitest.log"/>
+					<children name="BT negative_get" action="python run.py get > negtest.log" logfile="negtest.log"/>
+					<children name="BT initafterget" action="python run.py get 1 init 1 > test.log" logfile="test.log"/>
+				</children>
+				<children name="Bluetooth put" action="python run.py put 1" logfile="test.log">
+					<children name="BT initafterput" action="python run.py put 1 init 1 > test.log" logfile="test.log"/>
+				</children>
+		</children>
+		<children name="BLE" iterations="1">
+				<children name="BLE discover" action="python run.py discover 1" logfile="test.log">
+					<children name="BLE negative_discover" action="python run.py discover > negtest.log"  logfile="negtest.log"/>
+					<children name="BLE initafterdiscover" action="python run.py discover 1 init 1 > test.log" logfile="test.log"/>
+				</children>
+				<children name="BLE observe" action="python run.py observe 1" logfile="test.log">
+					<children name="BLE multiobserve" action="python run.py observe 5 > multitest.log" logfile="multitest.log"/>
+					<children name="BLE negative_observe" action="python run.py observe > negtest.log" logfile="negtest.log"/>
+					<children name="BLE initafterobserve" action="python run.py observe 1 init 1 > test.log" logfile="test.log"/>
+				</children>
+				<children name="BLE get" action="python run.py get 1" logfile="test.log">
+					<children name="BLE multiget" action="python run.py get 5 > multitest.log" logfile="multitest.log"/>
+					<children name="BLE negative_get" action="python run.py get > negtest.log" logfile="negtest.log"/>
+					<children name="BLE initafterget" action="python run.py get 1 init 1 > test.log" logfile="test.log"/>
+				</children>
+				<children name="BLE put" action="python run.py put 1" logfile="test.log">
+					<children name="BLE multBLEut" action="python run.py put 5 > multitest.log" logfile="multitest.log"/>
+					<children name="BLE negative_put" action="python run.py put > negtest.log" logfile="negtest.log"/>
+					<children name="BLE init_after_put" action="python run.py put 1 init 1 > test.log" logfile="test.log"/>
+				</children>
+			</children>
+		</children>
+</root>

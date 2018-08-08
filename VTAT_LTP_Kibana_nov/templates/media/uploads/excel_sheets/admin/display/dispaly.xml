@@ -1,0 +1,43 @@
+<root name="Display">
+	<root name="Display_ON/OFF">
+		<children name="Display_Lock" action="./Display_Lock.sh"/>
+		<children name="Display_Unlock" action="./Display_Unlock.sh"/>
+	</root>
+	<root name="Brightness">
+		<children name="Brightness_30" action="./Brightness_30.sh"/>
+		<children name="Brightness_60" action="./Brightness_60.sh"/>
+		<children name="Brightness_90" action="./Brightness_90.sh"/>
+		<children name="Brightness_120" action="./Brightness_120.sh"/>
+	</root>
+	<root name="Font_Scale">
+		<children name="Font_size_2" action="./Font_size_2.sh"/>
+		<children name="Font_size_4" action="./Font_size_4.sh"/>
+		<children name="Font_size_8" action="./Font_size_8.sh"/>
+		<children name="Font_size_6" action="./Font_size_6.sh"/>
+		<children name="Font_size_10" action="./Font_size_10.sh"/>
+	</root>
+	<root name="Wall_paper">
+		<children name="Set_wallpaper" action="./Set_wallpaper.sh"/>
+	</root>
+
+	<root name="Sleep">
+		<children name="Sleep_15sec" action="./Sleep_15sec.sh"/>
+		<children name="Sleep_30sec" action="./Sleep_30sec.sh"/>
+		<children name="Sleep_1min" action="./Sleep_1min.sh"/>
+		<children name="Sleep_2min" action="../Sleep_2min.sh"/>
+		<children name="Sleep_5min" action="./Sleep_5min.sh"/>
+		<children name="Sleep_10min" action="./Sleep_10min.sh"/>
+	</root>
+	<root name="Resolution">
+		<children name="Density" action="./Density.sh"/>
+		<children name="Resolution_HD" action="./Resolution_HD.sh"/>
+		<children name="Resolution_fullHD" action="./Resolution_fullHD.sh"/>
+	</root>
+	<root name="Rotate_Screen">
+		<children name="Screen_rotate_90" action="./Screen_rotate_90.sh"/>
+		<children name="Screen_rotate_180" action="./Screen_rotate_180.sh"/>
+		<children name="Screen_rotate_270" action="./Screen_rotate_270.sh"/>
+		<children name="Screen_rotate_0" action="./Screen_rotate_0.sh"/>
+	</root>
+</root>
+
