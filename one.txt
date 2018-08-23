@@ -1,2 +1,4 @@
 Hai Python
-This is a programming language
+This is a programming language and also scripting
+
+
