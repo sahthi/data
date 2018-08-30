@@ -1,2 +1,2 @@
 Hai Python
-This is a pogramming language
+This is a programming language
