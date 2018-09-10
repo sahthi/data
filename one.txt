@@ -1,4 +1,4 @@
-Hai Python
+Hello Python
 This is a programming language and also scripting
 
 
