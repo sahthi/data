@@ -1,0 +1,6 @@
+---
+ - hosts: all
+   become: true
+   tasks:
+     - name: copying some confidentail agreement
+       copy: content="This is confidential" dest="/home/ansible/sample.txt

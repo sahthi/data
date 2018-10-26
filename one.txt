@@ -1,4 +1,4 @@
 Hello Python
-This is a programming language and also scripting
-
+This is a programming language
+python is scripting language
 
